@@ -39,8 +39,36 @@ public class Circus {
     }
 
     public static void main(String[] args) {
-        makeAnimalsTalk();
+        System.out.println("number of animals in the array: " + animals.length);
+        //animals[2] = new Elephant ("StrongOne");
+        ArrayList<Animal> animalArrayList = new ArrayList<>(Arrays.asList(animals));
+        System.out.println("Size of the animal array list: " + animalArrayList.size());
+        Elephant andy = new Elephant("Andy");
+        Tiger sharKhan = new Tiger("Sher Khan");
+        Duck louie = new Duck("Louie");
+        Duck dewey = new Duck("Dewey");
+        Parrot birdie = new Parrot("Birdie");
+        animalArrayList.add(andy);
+        animalArrayList.add(sharKhan);
+        animalArrayList.add(louie);
+        animalArrayList.add(dewey);
+        animalArrayList.add(birdie);
+        System.out.println("Size of the animal array list after adding: " + animalArrayList.size());
+
+        System.out.println("Before sotring ...");
+        for (Animal animal : animalArrayList) {
+            System.out.println(animal);
+        }
+
+        System.out.println("Louie is at: " + animalArrayList.indexOf(louie));
+        animalArrayList.sort(Animal.AnimalNameComparator);
+        System.out.println("After sorting ...");
+        for (Animal animal : animalArrayList) {
+            System.out.println(animal);
+        }
+
+        /*makeAnimalsTalk();
         System.out.println("Total value of animals " + calculateAssetValue(animals));
-        System.out.println("Total value of equipments " + calculateAssetValue(equipments));
+        System.out.println("Total value of equipments " + calculateAssetValue(equipments));*/
     }
 }
